@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :date
       t.string :time
       t.string :venue_address
+      t.integer :meetup_id
 
       t.timestamps
     end
