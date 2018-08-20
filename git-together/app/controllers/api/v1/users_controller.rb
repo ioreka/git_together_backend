@@ -36,7 +36,14 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def set_events
+    # params[:event_ids].each
+    # find or create event by meetup id
+    # check if event.user = current_user
+    # event.user = current_user
+    # event.users = [] to enable multiple users
+
     if current_user && params[:id].to_i == current_user.id
+      current_user.events = params[:event_ids]
       render json: current_user.events
     else
       render json: { error: 'Not authorized!' }
