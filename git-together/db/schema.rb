@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_08_16_154204) do
     t.string "date"
     t.string "time"
     t.string "venue_address"
+    t.integer "meetup_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

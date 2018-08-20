@@ -40,6 +40,7 @@ class Api::V1::EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
+      UserEvent.create(user_id: 1, event_id: params[:meetup_id])
       render json: @event, status: :created, location: @event
     else
       render json: @event.errors, status: :unprocessable_entity
@@ -63,12 +64,12 @@ class Api::V1::EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.find_by(params[:meetup_id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:name, :group_name, :description, :date, :time, :venue_address, :meetup_id)
+      params.permit(:name, :group_name, :description, :date, :time, :venue_address, :meetup_id)
     end
 
 end
