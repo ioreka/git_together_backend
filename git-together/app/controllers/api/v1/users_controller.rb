@@ -37,16 +37,14 @@ class Api::V1::UsersController < ApplicationController
 
   def set_events
     if current_user && params[:id].to_i == current_user.id
-      # current_user.event_ids = params[:event_ids].map do |id|
-      #   if id == 129
-      #     130
-      #   else
-      #     id
-      #   end
-      # end
       render json: current_user.events
     else
       render json: { error: 'Not authorized!' }
     end
+  end
+
+  def show
+    user = User.find_by(id: params[:id])
+    render json: user
   end
 end
