@@ -27,10 +27,11 @@ ActiveRecord::Schema.define(version: 2018_08_16_154204) do
     t.string "name"
     t.string "group_name"
     t.string "description"
-    t.string "date"
-    t.string "time"
-    t.string "venue_address"
+    t.string "local_date"
+    t.string "local_time"
+    t.string "address"
     t.integer "meetup_id"
+    t.string "meetup_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

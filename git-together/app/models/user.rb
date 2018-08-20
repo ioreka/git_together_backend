@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :userevents
+  has_many :user_events
   has_many :comments
-  has_many :events, through: :userevents
+  has_many :events, through: :user_events
 
   has_secure_password
 end
