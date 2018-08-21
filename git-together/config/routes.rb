@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get "/current_user", to: 'users#get_current_user'
       get "/users/:id/events", to: 'users#get_events'
       post "/users/:id/events", to: 'users#set_events'
+      delete "/users/:id/events", to: 'users#delete_event'
     end
   end
 end
