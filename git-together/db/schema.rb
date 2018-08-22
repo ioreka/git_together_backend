@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_08_16_154204) do
     t.integer "user_id"
     t.integer "event_id"
     t.string "comment"
+    t.string "meetup_id"
+    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
