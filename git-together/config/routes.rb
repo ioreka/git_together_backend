@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :events
       resources :user_events
+      resources :comments , only: [:index, :create, :show]
       resources :users, only: [:create, :show]
-      resources :comments
       get "/getevents", to: 'events#get_events'
       post "/login", to: 'users#login'
       get "/current_user", to: 'users#get_current_user'
